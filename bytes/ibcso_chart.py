@@ -151,7 +151,7 @@ def main():
                      "SOURCE_SHA256": h, "TITLE": a.title,
                      "GEOREFERENCING": f"1:{SCALE:g} at {a.dpi} dpi; pole fitted to the {neat_name[9:]} disc "
                                        f"({cx:.2f}, {cy:.2f}) px; rim {100 * err:+.3f}% from {neat_name[9:]} "
-                                       "(bytes/ibcso_chart.py, AustralianAntarcticDivision/ibcso)"})
+                                       "(py/ibcso_chart.py)"})
     for i, c in enumerate((gdal.GCI_RedBand, gdal.GCI_GreenBand, gdal.GCI_BlueBand), 1):
         mem.GetRasterBand(i).SetColorInterpretation(c)
     gdal.Translate(tif, mem, format="COG", creationOptions=[
